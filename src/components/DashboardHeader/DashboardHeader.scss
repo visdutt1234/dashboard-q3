@@ -1,0 +1,46 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixin.scss";
+
+.dashboard-header {
+  display: flex;
+  flex-direction: column;
+  .filter-options {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    select,
+    input {
+      min-width: 120px;
+    }
+    .inputfield {
+      flex: 1;
+    }
+    .search-btn {
+      flex: 1;
+      background: $active-color;
+      color: $white;
+      border: none;
+      padding: 12px 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease;
+
+      svg {
+        font-size: 16px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .dashboard-header {
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    .filter-options {
+      align-items: center;
+    }
+  }
+}

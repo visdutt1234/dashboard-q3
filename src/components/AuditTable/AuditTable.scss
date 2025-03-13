@@ -1,0 +1,64 @@
+@import "../../styles/variables.scss";
+
+.audit-table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.audit-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: $white;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+
+  thead {
+    background-color: #ebeaef;
+    text-align: left;
+
+    th {
+      padding: 12px;
+      font-size: 14px;
+      color: $text-color;
+      font-weight: 600;
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid $border-color;
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover {
+        background-color: #f9f9f9;
+      }
+
+      td {
+        padding: 12px;
+        font-size: 14px;
+        color: $text-color;
+
+        .extra {
+          color: $link-color;
+          font-weight: 500;
+          cursor: pointer;
+        }
+
+        &.action {
+          text-align: center;
+          cursor: pointer;
+
+          svg {
+            color: #666;
+            transition: color 0.3s;
+          }
+
+          &:hover svg {
+            color: $link-color;
+          }
+        }
+      }
+    }
+  }
+}

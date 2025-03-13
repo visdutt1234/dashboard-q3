@@ -1,0 +1,16 @@
+.dashboard {
+  .dashboard-charts {
+    display: flex;
+    gap: 20px;
+    .shadow {
+      flex: 1;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .dashboard {
+    .dashboard-charts {
+      flex-direction: column;
+    }
+  }
+}

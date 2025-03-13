@@ -1,0 +1,57 @@
+
+@import "../../styles/variables.scss";
+
+.donutchart {
+    display: flex;
+    align-items: center;
+    .graph-right {
+        flex: 0 0 200px;
+        height: 200px;
+        max-width: 200px;
+    }
+    .graph-left {
+        
+        padding-left: 20px;
+        color: rgba($text-color, 0.8);
+        h4 {
+            font-size: 16px;
+            font-weight: 400;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            span {
+                color: $text-color;
+                font-size: 24px;
+                font-weight: 600;
+            }
+        }
+        ul {
+            li {
+                display: flex;
+                font-size: 12px;
+                align-items: center;
+                padding-bottom: 10px;
+                .icon {
+                    width: 16px;
+                    height: 16px;
+                    margin-right: 8px;
+                }
+                .number {
+                    color: $text-color;
+                    margin-left: auto;
+                    font-weight: 600;
+                    padding-left: 10px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .donutchart {
+        flex-direction: column;
+        gap: 20px;
+        .graph-left {
+            padding-left: 0;
+        }
+    }
+}

@@ -1,0 +1,92 @@
+.control-effectiveness {  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .selectfield {
+    select {
+      min-width: 120px;
+    }
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .donut-chart {
+      width: 120px;
+      height: 120px;
+
+      .circular-chart {
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
+      }
+
+      .circle {
+        fill: none;
+        stroke-width: 3;
+        stroke-dasharray: 25, 100;
+        stroke-linecap: round;
+      }
+    }
+
+    .legend {
+      flex: 1;
+      padding-left: 16px;
+
+      h3 {
+        font-size: 14px;
+        margin-bottom: 8px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          display: flex;
+          align-items: center;
+          font-size: 12px;
+          margin-bottom: 4px;
+
+          .color-box {
+            width: 12px;
+            height: 12px;
+            margin-right: 8px;
+            border-radius: 2px;
+          }
+
+          .effective { background: #27AE60; }
+          .partial { background: #F4D03F; }
+          .non-effective { background: #E74C3C; }
+          .improvement { background: #5A32A3; }
+
+          strong {
+            margin-left: auto;
+          }
+        }
+      }
+
+      .total {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 8px;
+        text-align: right;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .control-effectiveness {
+    .header {
+      gap: 10px;
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+}

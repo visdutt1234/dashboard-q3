@@ -1,0 +1,262 @@
+@import "./src/styles/variables.scss";
+@import "./src/styles/mixin.scss";
+@import "./src/styles//grid.scss";
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  font-family: "Arial", sans-serif;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+body {
+  background: #ededf5;
+}
+
+.app {
+  display: flex;
+}
+h1 {
+  font-weight: 600;
+  font-size: 24px;
+  color: $text-color;
+}
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.inputfield {
+  select,
+  input {
+    color: $text-color;
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid $border-color;
+    font-size: 14px;
+    background: $white;
+    transition: all 0.3s ease;
+    -webkit-appearance: none;
+    height: 40px;
+    &:hover {
+      border-color: $active-color;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+  input {
+    &::placeholder {
+      color: $text-color;
+    }
+  }
+  .input-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: $text-color;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .required {
+    color: $error-color;
+  }
+
+  &.errorfield {
+    input {
+      border-color: $error-color;
+    }
+  }
+
+  .error-message {
+    color: $error-color;
+    font-size: 12px;
+  }
+}
+.selectfield {
+  position: relative;
+  select {
+    padding-right: 30px;
+  }
+  &::after {
+    content: "";
+    border: 0 solid $text-color;
+    border-width: 0 0 1px 1px;
+    width: 8px;
+    height: 8px;
+    margin: -6px 0 0 0;
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    right: 16px;
+    transform: rotate(315deg);
+  }
+}
+.shadow {
+  background: $white;
+  box-shadow: 0 2px 2px rgba(36, 39, 44, 0.1);
+  padding: 17px 20px 20px;
+}
+.mb20 {
+  margin-bottom: 20px;
+}
+.main-container {
+  padding: 20px;
+}
+.create-application {
+  h1 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    a {
+      display: flex;
+      align-items: center;
+      font-size: 30px;
+    }
+  }
+}
+fieldset {
+  border: 1px solid $border-color;
+  border-width: 0 0 1px 0;
+  padding: 14px 0 20px;
+  margin: 20px 0;
+  &:last-child {
+    border: none;
+    margin-bottom: -20px;
+  }
+}
+.pt-0 {
+  padding-top: 0;
+}
+.mt-0 {
+  margin-top: 0;
+}
+.pb-0 {
+  padding-bottom: 0;
+}
+.mb-0 {
+  margin-bottom: 0;
+}
+legend {
+  font-weight: 600;
+  font-size: 14px;
+  color: $text-color;
+}
+.flex-end {
+  align-items: flex-end;
+}
+.secondary,
+.primary {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 16px;
+  outline: none;
+  border: solid 1px $primary-color;
+  color: $white;
+  background: $primary-color;
+  transition: all 0.3s ease-in-out;
+}
+.secondary {
+  color: $primary-color;
+  background: $white;
+  border: solid 1px $primary-color;
+}
+.bottom-button {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 -2px 6px 2px #24272c1a;
+  .secondary {
+    flex: 0 0 calc(50% - 8px);
+  }
+  .primary {
+    flex: 1;
+  }
+}
+.create-application {
+  padding-bottom: 130px;
+}
+@media screen and (min-width: 768px) {
+  .main-container {
+    width: calc(100% - 250px);
+    margin-left: 250px;
+    padding: 24px 24px 24px 30px;
+  }
+  .expend-layout {
+    .main-container {
+      width: calc(100% - 60px);
+      margin-left: 60px;
+    }
+  }
+  .bottom-button {
+    width: calc(100% - 250px);
+    margin-left: 250px;
+    padding: 20px 24px;
+    justify-content: flex-end;
+    .secondary,
+    .primary {
+      flex: 0 0 120px;
+    }
+    .secondary:first-child {
+      margin-right: auto;
+    }
+  }
+  .expend-layout {
+    .bottom-button {
+      width: calc(100% - 60px);
+      margin-left: 60px;
+    }
+  }
+  .create-application {
+    padding-bottom: 100px;
+  }
+}
